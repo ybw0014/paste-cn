@@ -132,6 +132,7 @@ const Menu = styled.ul`
 
   > li {
     padding: 0em 1em 0.05em 1em;
+    color: ${props => props.theme.primary};
   }
 
   > li:hover {

@@ -180,6 +180,10 @@ const AboutPanel = styled.div`
   span {
     color: ${props => props.theme.logo};
   }
+
+  a {
+    color: ${props => props.theme.logo};
+  }
 `;
 
 const BannerContainer = styled.div`

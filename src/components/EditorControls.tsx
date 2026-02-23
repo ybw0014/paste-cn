@@ -4,9 +4,9 @@ import { RefObject, useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import themes, { Themes } from '../style/themes';
+import { useQueryRouting } from '../util/constants';
 import { languages } from '../util/highlighting';
 import { saveToBytebin } from '../util/storage';
-import { useQueryRouting } from '../util/constants';
 import Button from './Button';
 import { ResetFunction } from './Editor';
 import MenuButton from './MenuButton';
@@ -44,6 +44,7 @@ export default function EditorControls({
   const [recentlySaved, setRecentlySaved] = useState<boolean>(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setRecentlySaved(false);
   }, [actualContent, language]);
 

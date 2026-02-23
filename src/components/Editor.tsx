@@ -48,6 +48,7 @@ export default function Editor({
 
   useEffect(() => {
     if (contentType) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLanguage(contentType);
     }
   }, [contentType]);
@@ -84,7 +85,7 @@ export default function Editor({
         fontSize={fontSize}
         readOnly={readOnly}
         wordWrap={wordWrap}
-        resetFunction={resetFunction}
+        resetFunctionRef={resetFunction}
       />
     </>
   );

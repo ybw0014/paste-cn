@@ -4,8 +4,8 @@ import About from './components/About.tsx';
 import Editor from './components/Editor';
 import usePreference from './hooks/usePreference.ts';
 import themes, { Themes } from './style/themes.ts';
-import { loadFromBytebin } from './util/storage';
 import { useQueryRouting } from './util/constants';
+import { loadFromBytebin } from './util/storage';
 
 const INITIAL = Symbol();
 const LOADING = Symbol();
@@ -33,6 +33,7 @@ export default function App() {
 
   useEffect(() => {
     if (pasteId && state === INITIAL) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setState(LOADING);
       setContent('Loading...');
 

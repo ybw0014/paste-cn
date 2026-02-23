@@ -5,14 +5,7 @@ import Editor, {
   OnMount,
 } from '@monaco-editor/react';
 import history from 'history/browser';
-import {
-  MutableRefObject,
-  RefObject,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
 import styled, { useTheme } from 'styled-components';
 import themes, { Theme } from '../style/themes';
 
@@ -62,7 +55,7 @@ export interface EditorTextAreaProps {
   fontSize: number;
   readOnly: boolean;
   wordWrap: boolean;
-  resetFunction: MutableRefObject<ResetFunction | null>;
+  resetFunctionRef: RefObject<ResetFunction | null>;
 }
 
 export default function EditorTextArea({
@@ -73,7 +66,7 @@ export default function EditorTextArea({
   fontSize,
   readOnly,
   wordWrap,
-  resetFunction,
+  resetFunctionRef,
 }: EditorTextAreaProps) {
   const [editor, setEditor] = useState<editor.IStandaloneCodeEditor>();
   const [monaco, setMonaco] = useState<Monaco>();
@@ -129,7 +122,7 @@ export default function EditorTextArea({
     setEditor(editor);
     setMonaco(monaco);
 
-    resetFunction.current = () => {
+    resetFunctionRef.current = () => {
       editor.setValue('');
       editor.focus();
     };

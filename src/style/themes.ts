@@ -1,9 +1,14 @@
 import type { editor } from 'monaco-editor';
 
 import { CatppuccinFlavor, ColorFormat, flavors } from '@catppuccin/palette';
+
+// @ts-expect-error Alias import added in vite.config.ts
 import dracula from 'monaco-themes/themes/Dracula.json';
+// @ts-expect-error Alias import added in vite.config.ts
 import monokai from 'monaco-themes/themes/Monokai.json';
+// @ts-expect-error Alias import added in vite.config.ts
 import solarizedDark from 'monaco-themes/themes/Solarized-dark.json';
+// @ts-expect-error Alias import added in vite.config.ts
 import solarizedLight from 'monaco-themes/themes/Solarized-light.json';
 
 type Color = `#${string}`;
@@ -87,7 +92,7 @@ const themes: Themes = {
     secondary: '#022550',
     highlight: '#36368c',
     background: '#ffffff',
-    logo: '#022550',
+    logo: '#00a2ff',
     lightOrDark: 'light',
 
     highlightedLine: {
