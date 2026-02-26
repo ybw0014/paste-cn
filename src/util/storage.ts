@@ -31,7 +31,8 @@ export async function loadFromBytebin(id: string): Promise<LoadResult> {
     } else {
       return { ok: false };
     }
-  } catch {
+  } catch (e) {
+    console.error(e);
     return { ok: false };
   }
 }
@@ -59,7 +60,7 @@ export async function saveToBytebin(
       return json.key;
     }
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
   return null;
 }

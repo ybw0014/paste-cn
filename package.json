@@ -22,7 +22,7 @@
     "react-device-detect": "^2.2.3",
     "react-dom": "^19.2.4",
     "styled-components": "^6.3.11",
-    "whatwg-mimetype": "^5.0.0"
+    "whatwg-mimetype": "^3.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
